@@ -211,7 +211,15 @@ for (const oddValue of Object.values(game.odds)) {
 }
 console.log(`The average of the odd is: ${totalOdd / no_Odd}`);
 
-3;
-for (const oddsValue of Object.values(game.odds)) {
-  console.log(oddsValue);
+//3
+for (const [name, value] of Object.entries(game.odds)) {
+  const nameStr = name === 'x' ? 'draw' : game[name];
+  console.log(`odd of victory ${nameStr}: ${value}`);
 }
+
+//Bonus
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
