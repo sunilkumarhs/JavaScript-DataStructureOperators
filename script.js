@@ -259,3 +259,24 @@ for (const [key, value] of hotel) {
 }
 const time = 13;
 console.log(hotel.get(time > hotel.get('open') && time < hotel.get('close')));
+
+const question = new Map([
+  ['Question', 'Which is best programing language for web devlopment?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try Again'],
+]);
+console.log(question);
+console.log(question.get('Question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(key, value);
+}
+const answer = Number(prompt('Enter the correct number choice:'));
+console.log(question.get(answer === question.get('correct')));
+
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
