@@ -197,8 +197,7 @@ GOOD LUCK 😀
 */
 console.log('Challenge 2:');
 //1
-const scoredPlayers = game.scored.entries();
-for (const [goal, playerName] of scoredPlayers) {
+for (const [goal, playerName] of game.scored.entries()) {
   console.log(`Goal no. ${goal + 1} - Name: ${playerName}`);
 }
 
@@ -223,3 +222,40 @@ for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
+
+//sets
+const rcb = new Set(['Virat', 'Abd', 'Gayel', 'Siraj', 'Virat']);
+console.log(rcb);
+console.log(rcb.size);
+console.log(rcb.has('Virat'));
+console.log(rcb.has('Rahul'));
+rcb.add('Karthik');
+console.log(rcb);
+rcb.delete('Karthik');
+//rcb.clear();
+console.log(rcb);
+const arrayBlock = ['a', 'b', 'b', 'c', 'd', 'a'];
+const setBlock = [...new Set(arrayBlock)];
+console.log(setBlock);
+for (const player of rcb) {
+  console.log(player);
+}
+
+//maps
+const hotel = new Map();
+hotel.set('name', 'UHI Hotel');
+hotel.set(1, 'Banglore');
+hotel.set(2, 'Mysore');
+console.log(hotel);
+hotel
+  .set('catagories', ['Dosa', 'Idali', 'ChitraAnna', 'RiceBath'])
+  .set('open', 9)
+  .set('close', 18)
+  .set(true, 'Hotel is Open')
+  .set(false, 'Hotel is Closed');
+
+for (const [key, value] of hotel) {
+  console.log(key, ':', value);
+}
+const time = 13;
+console.log(hotel.get(time > hotel.get('open') && time < hotel.get('close')));
