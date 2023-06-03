@@ -223,6 +223,8 @@ for (const player of game.scored) {
 }
 console.log(scorers);
 
+console.log('SETS---');
+
 //sets
 const rcb = new Set(['Virat', 'Abd', 'Gayel', 'Siraj', 'Virat']);
 console.log(rcb);
@@ -241,6 +243,7 @@ for (const player of rcb) {
   console.log(player);
 }
 
+console.log('MAPs---');
 //maps
 const hotel = new Map();
 hotel.set('name', 'UHI Hotel');
@@ -281,6 +284,7 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
+console.log('Challenge 3');
 ///////////////////////////////////////
 // Coding Challenge #3
 
@@ -332,3 +336,28 @@ for (const [min, event] of gameEvents) {
     console.log(`[SECOND HALF] ${min}: ${event}`);
   }
 }
+
+console.log('Strings');
+//Strings
+const airplane = 'Tata Air India';
+console.log(airplane);
+const plane = 'A452';
+
+console.log(plane[0]);
+console.log(plane[3]);
+console.log('B2345'[2]);
+console.log(airplane.slice(3, 8));
+console.log(airplane.indexOf('a'));
+console.log(airplane.lastIndexOf('a'));
+console.log(airplane.slice(0, airplane.indexOf(' ')));
+console.log(airplane.slice(airplane.lastIndexOf(' ') + 1));
+
+const checkMiddleSeat = function (seatNum) {
+  if (seatNum.slice(-1) === 'B' || seatNum.slice(-1) === 'E')
+    console.log('You have got middle set');
+  else console.log('Very Lucky, you have got window side');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('3C');
+checkMiddleSeat('5E');
