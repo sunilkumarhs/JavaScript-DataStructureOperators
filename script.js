@@ -404,3 +404,34 @@ const checkBording = function (items) {
 checkBording('I have brought some snacks and Food with Knief');
 checkBording('I have Snacks and camera');
 checkBording('I have brought gun for protection and some snacks for eating');
+
+console.log('Sunil+Kumar+HS'.split('+'));
+console.log('Sunil Kumar HS'.split(' '));
+
+const capitalizer = function (string) {
+  const words = string.split(' ');
+  let splitWords = [];
+  for (const word of words) {
+    splitWords.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(splitWords.join(' '));
+};
+
+capitalizer('sunil kumar h s');
+capitalizer('hi GoodMorning');
+
+const creditCard = function (number) {
+  const str = number + '';
+  const lastNum = str.slice(-4);
+  console.log(lastNum.padStart(str.length, '*'));
+};
+
+creditCard(238408506123);
+creditCard(9724249223);
+
+const planeLandingMessage = function (n) {
+  console.log(`There are ${n} of planes, in queue.${'✈️'.repeat(n)}`);
+};
+
+planeLandingMessage(5);
+planeLandingMessage(12);
