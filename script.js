@@ -4,6 +4,34 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const flightNews = flights.split('+');
+console.log(flightNews);
+const flightNewsSorted = [];
+for (const message of flightNews) {
+  // flightNewsSorted.push(message.replace('_',' ').replace(';',' from ').replace(';',' to '));
+  const [m1, m2, m3, m4] = message.split(';');
+  const m5 = '(' + m4 + ')';
+  let flightNewsSorted =
+    m1.replaceAll('_', ' ') +
+    ' from ' +
+    m2.replace(m2, m2.slice(0, 3).toUpperCase()) +
+    ' to ' +
+    m3.replace(m3, m3.slice(0, 3).toUpperCase()) +
+    ' ' +
+    m5.replace(':', 'h');
+  if (flightNewsSorted.includes('Delayed')) {
+    flightNewsSorted = '🛑' + flightNewsSorted;
+    console.log(`${flightNewsSorted.padStart(44)}`);
+  } else {
+    console.log(flightNewsSorted.padStart(44));
+  }
+}
+
 const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const openingHours = {
   [weekDays[3]]: {
