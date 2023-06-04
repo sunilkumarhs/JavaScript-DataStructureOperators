@@ -340,8 +340,9 @@ for (const [min, event] of gameEvents) {
 console.log('Strings');
 //Strings
 const airplane = 'Tata Air India';
+const cost = '15,200₹';
 console.log(airplane);
-const plane = 'A452';
+const plane = 'Airbus A452neo';
 
 console.log(plane[0]);
 console.log(plane[3]);
@@ -361,3 +362,45 @@ const checkMiddleSeat = function (seatNum) {
 checkMiddleSeat('11B');
 checkMiddleSeat('3C');
 checkMiddleSeat('5E');
+
+console.log(airplane.toLowerCase());
+console.log(airplane.toUpperCase());
+console.log(airplane.includes('Tata'));
+console.log(cost, 'This is for Indian travelers');
+console.log(
+  cost.replace('₹', '$').replace(',', '.'),
+  'This is for US travelers'
+);
+console.log(plane.startsWith('Air'));
+
+if (
+  plane.toLowerCase().startsWith('airbus') &&
+  plane.toLowerCase().endsWith('neo')
+)
+  console.log(`This ${plane} plane belongs to new Airbus family!!`);
+
+const email = 'sunilkumarhs974117@gmail.com';
+const loginEmail = 'SunilKumarHS974117@Gmail.com';
+
+const checkEmail = function (mail) {
+  if (mail.toLowerCase() === email) console.log('Login Sucessfull!');
+  else console.log('Wrong email!!');
+};
+checkEmail(loginEmail);
+checkEmail('sunil@gamil.com');
+
+const boardingWelcome =
+  'All passengers are requested to move to boarding door 17, Boarding Door 17!';
+console.log(boardingWelcome.toLowerCase().replace('door', 'gate'));
+console.log(boardingWelcome.toLowerCase().replaceAll('door', 'gate'));
+
+const checkBording = function (items) {
+  const boardItems = items.toLowerCase();
+  if (boardItems.includes('knief') || boardItems.includes('gun'))
+    console.log('You are not allowed to boarding!!');
+  else console.log('Welcome to boarding!');
+};
+
+checkBording('I have brought some snacks and Food with Knief');
+checkBording('I have Snacks and camera');
+checkBording('I have brought gun for protection and some snacks for eating');
